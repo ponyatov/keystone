@@ -71,6 +71,7 @@ class Cmd : Active {
     }
 }
 
+/// `( -- )` empty command: do nothing
 void nop() {
 }
 
@@ -78,6 +79,7 @@ static this() {
     W["nop"] = new Cmd("nop", &nop);
 }
 
+/// `. ( ... -- )` drop all from stack
 void dot() {
     D.empty;
 }
@@ -87,9 +89,14 @@ static this() {
 }
 
 @trusted ParseTree word(ParseTree p) {
-    if (p.successful)
-        writeln("\n=> ", p.matches[0]);
-    // return p;
+    if (p.successful) {
+        auto key = p.matches[0];
+        if (key in W)
+            writeln(W[key]);
+        else
+            p.successful = false;
+    }
+    return p;
 }
 
 mixin(grammar(`

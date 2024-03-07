@@ -8,6 +8,6 @@
     "targetPath":  "bin",
     "subPackages":  [],
     "dependencies": {
-        "pegged": "~>0.4.9"
+        "pegged": "~>0.4.9",
     }
 }

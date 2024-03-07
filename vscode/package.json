@@ -1,6 +1,7 @@
 {
     "name": "keystone",
     "displayName": "keystone control script",
+    "description": "pixel-level mapping and keystone correction for multihead projector systems",
     "version": "0.0.1",
     "publisher": "dponyatov",
     "author": {
@@ -31,7 +32,9 @@
         }],
         "languages": [{
             "id": "keystone",
-            "extensions": [".f",".ini",".ks"]
+            "extensions": [".f",".ini",".ks"],
+            "aliases": ["fini","forth"],
+            "configuration": "./lang.config.json"
         }],
         "grammars": [{
             "language": "keystone",

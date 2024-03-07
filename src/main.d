@@ -14,6 +14,6 @@ void main(string[] args) {
         arg(argc, argv);
         writeln(FORTH(readText(argv)));
     }
-    writeln("W: ",script.W);
-    writeln("\nD: ",script.D);
+    writeln("W: ", script.W);
+    writeln("\nD: ", script.D);
 }

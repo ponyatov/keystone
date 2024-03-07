@@ -47,6 +47,13 @@ tmp/format_d: $(D)
 bin/$(MODULE): $(D) $(J) Makefile
 	$(BLD)
 
+# doc
+doc: \
+	doc/vol8_no6.pdf
+
+doc/vol8_no6.pdf:
+	$(CURL) $@ https://article.nadiapub.com/IJSIP/vol8_no6/6.pdf
+
 # install
 .PHONY: install update gz ref
 install: doc gz

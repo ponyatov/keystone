@@ -91,9 +91,10 @@ static this() {
 @trusted ParseTree word(ParseTree p) {
     if (p.successful) {
         auto key = p.matches[0];
-        if (key in W)
+        if (key in W) {
             writeln(W[key]);
-        else
+            // p.matches[0] = W[key];
+        } else // return pegged.fail;
             p.successful = false;
     }
     return p;
@@ -101,8 +102,7 @@ static this() {
 
 mixin(grammar(`
     FORTH:
-        Syntax  <- (Comment|space|Word)*
-        Comment <: '#' (![\r\n] .)*
-        space   <: [ \t\r\n]+
-        Word    <{word} ~([_a-zA-Z][_a-zA-Z0-9]*)
+        Syntax  <-      (blank|Comment|Word)*
+        Comment <:      '#' (!eol .)*
+        Word    <{word} identifier
 `));

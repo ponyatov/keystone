@@ -20,6 +20,9 @@
         "ref/**": true,
     },
     "files.associations": {
+        "lib/*.ini": "keystone",
+        "lib/*.f*":  "keystone",
+        "lib/*.ks":  "keystone",
     },
 
     // editor

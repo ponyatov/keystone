@@ -1,0 +1,27 @@
+{
+    "name": "keystone",
+    "scopeName": "script.keystone",
+    "fileTypes": [".f",".ini",".ks"],
+    "patterns": [
+        {"include": "#comment"},
+        {"include": "#number"},
+        {"include": "#command"}
+    ],
+    "repository": {
+        "comment": { "patterns": [{
+                    "comment": "pythonic/shell line comment",
+                    "match": "(#.*$)",
+                    "name": "comment.line.number-sign"
+            }]},
+        "number": { "patterns": [{
+                    "comment": "number",
+                    "match": "[+\\-]?[0-9]+",
+                    "name": "constant.numeric.integer"
+            }]},
+        "command": { "patterns": [{
+                    "comment": "command",
+                    "match": "(nop|halt)",
+                    "name": "keyword.control"
+            }]}
+    }
+}

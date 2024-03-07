@@ -67,7 +67,7 @@ ref:
 # merge
 MERGE += Makefile README.md apt.txt LICENSE
 MERGE += .clang-format .editorconfig .doxygen .gitignore
-MERGE += .vscode bin doc lib inc src tmp ref
+MERGE += .vscode bin doc lib inc src tmp ref vscode
 
 .PHONY: dev
 dev:

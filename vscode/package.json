@@ -1,0 +1,46 @@
+{
+    "name": "keystone",
+    "displayName": "keystone control script",
+    "version": "0.0.1",
+    "publisher": "dponyatov",
+    "author": {
+        "name": "Dmitry Ponyatov",
+        "email": "dponyatov@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ponyatov/keystone/tree/shadow/vscode"
+    },
+    "homepage": "https://github.com/ponyatov/keystone",
+    "icon": "logo.png",
+    "categories": [
+        "Programming Languages"
+    ],
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "activationEvents": [
+        "onStartupFinished",
+        "onLanguage:keystone"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [{
+            "command": "keystone.hello",
+            "title": "keystone: Hello"
+        }],
+        "languages": [{
+            "id": "keystone",
+            "extensions": [".f",".ini",".ks"]
+        }],
+        "grammars": [{
+            "language": "keystone",
+            "scopeName": "script.keystone",
+            "path": "./tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "keystone",
+            "path": "./snippets.json"
+        }]
+    }
+}

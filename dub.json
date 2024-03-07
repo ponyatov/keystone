@@ -7,5 +7,7 @@
     "targetType":  "executable",
     "targetPath":  "bin",
     "subPackages":  [],
-    "dependencies": {}
+    "dependencies": {
+        "pegged": "~>0.4.9"
+    }
 }
